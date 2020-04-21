@@ -652,8 +652,9 @@ install_module() {
   $BOOTMODE && MODDIRNAME=modules_update || MODDIRNAME=modules
   local MODULEROOT=$NVBASE/$MODDIRNAME
   MODID=`grep_prop id $TMPDIR/module.prop`
-  MODPATH=$MODULEROOT/$MODID
   MODNAME=`grep_prop name $TMPDIR/module.prop`
+  MODAUTH=`grep_prop author $TMPDIR/module.prop`
+  MODPATH=$MODULEROOT/$MODID
 
   # Create mod paths
   rm -rf $MODPATH 2>/dev/null
